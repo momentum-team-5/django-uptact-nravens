@@ -37,6 +37,15 @@ def edit_contact(request, pk):
         "contact": contact
     })
 
+def view_contact(request, pk):
+    """View a contact and all of its notes"""
+    contact = get_object_or_404(Contact, pk=pk)
+    return render(request, "contacts/view_contact.html", {"contact": contact})
+
+    
+
+      
+
 
 def delete_contact(request, pk):
     contact = get_object_or_404(Contact, pk=pk)
